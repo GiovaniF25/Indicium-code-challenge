@@ -207,9 +207,9 @@ docker exec -it airflow-container bash
         
 ## **To run the pipeline at docker-desktop**
 
-airflow run indicium_data_pipeline extract_data '2024-02-20'
+airflow run indicium_data_pipeline extract_data '{currente_date}'
 
-airflow run indicium_data_pipeline load_data '2024-02-20'
+airflow run indicium_data_pipeline load_data '{currente_date}'
 
   ![image](https://github.com/GiovaniF25/Indicium-code-challenge/assets/106926901/3adf4548-9f5d-4318-a0f9-3f706b24b76a)
 
