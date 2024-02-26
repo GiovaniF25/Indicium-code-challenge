@@ -6,7 +6,8 @@ More info about the challenge can be found at: https://github.com/techindicium/c
 ## The Challenge Synopsis
 This project implements a data pipeline using the Airflow and Meltano tools to extract, transform and load (ETL) data from two distinct sources: a PostgreSQL database and a CSV file. The ultimate goal is to store this data in a second PostgreSQL database.
 Create a pipeline that extracts data from two sources and writes it first to local disk and then to a database daily. using airflow for the scheduler and Meltano for the data loader
-             ![image](https://github.com/GiovaniF25/FINAL-INDICIUM-CHALLENGE/assets/106926901/f0676e19-dced-4a40-8832-9049a77c6149)
+             ![image](https://github.com/GiovaniF25/Indicium-code-challenge/assets/106926901/f15ba856-84f4-42f6-81dd-6f54ae8e2b6f)
+
 
 Step 1: Perform data extraction from the CSV file and the PostgreSQL database using Meltano, moving the results to my local filesystem:
 
