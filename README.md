@@ -205,18 +205,14 @@ After you set up my code, it is possible to test each task or the whole pipeline
 docker exec -it airflow-container bash
 
         
-## **To test some task**
+## **To run the pipeline at docker-desktop**
 
-airflow test "indicium_data_pipeline extract_data" 2024-02-20
+airflow run indicium_data_pipeline extract_data '2024-02-20'
+airflow run indicium_data_pipeline load_data '2024-02-20'
 
-        
-## **To run the pipeline in past days**
+  ![image](https://github.com/GiovaniF25/Indicium-code-challenge/assets/106926901/3adf4548-9f5d-4318-a0f9-3f706b24b76a)
 
-airflow backfill ""DAG-indicium "" -s 2024-02-21 -e 2024-02-22
-
-The output files will be load at /data folder.
-
-        
+  
         
 ## **Monitor and Troubleshoot**
 
