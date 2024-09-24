@@ -4,20 +4,14 @@ from datetime import datetime
 import config
 
 def load_data_task():
-    # Destination PostgreSQL information
     dest_postgres_info = config.dest_postgres_info
 
-    # Output directory for files
     output_directory = "/data/"
-
-    # Create a subdirectory with the current date
     current_date = datetime.now().strftime("%Y-%m-%d")
     output_directory = os.path.join(output_directory, current_date)
-
-    # Ensure the output directory exists
+    
     os.makedirs(output_directory, exist_ok=True)
 
-    # Meltano command to load data into the destination PostgreSQL
     meltano_load_dest_command = f"meltano elt {output_directory}/postgres_output target-postgres \
         --host {dest_postgres_info['host']} \
         --user {dest_postgres_info['user']} \
@@ -27,14 +21,12 @@ def load_data_task():
         --output {output_directory}/dest_postgres_output"
 
     try:
-        # Load data into the destination PostgreSQL
         subprocess.run(meltano_load_dest_command, shell=True, check=True)
-
         print("Data loading completed successfully!")
 
     except subprocess.CalledProcessError as e:
         print(f"Error executing Meltano: {e}")
         raise
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     load_data_task()
